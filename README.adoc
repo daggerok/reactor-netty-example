@@ -8,7 +8,7 @@ Netty server - fast and easy
 Read link:https://daggerok.github.io/reactor-netty-example[project reference documentation]
 
 .easy...
-[source,bash]
+[source,java]
 ----
 include::./src/main/java/daggerok/App.java[tags=content]
 ----
