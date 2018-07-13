@@ -1,6 +1,7 @@
 env:
   global:
   - TERM=dumb
+  - secure: 9s6JnyXJZ+/RyS4R3ZqZ0vIas2SYEzZX7s4SzbNAUHxeigCMRuFRH7S8DBzDUZrimfN4Ac4PElBPRu7wGjbdT4KtT2wZvYVkgT2z7iNqMHm6PfLY4Wap1PTG031rpo6zsjxTqI2Cku5fRGswl8FpOooreJoY65lO7KzZ3R2XD9Nscdff/oFlQuKSzijzoHCi8EBzhk5Uh0COI/w6B/cZjhYooHlfEweQ+P7/aqqstvbYy226NGwbzHyQTBXV61JUCatlSzwZCihvhBGcxNX79kTyn1Dz5DigOkQ6OfJQw52N7axtdXhVCFyGE1obxzA6tw5Jtz119UzA3cn0t8NWOaAFN1JiQ3LAgRX1iuX0+qzs/8eh5zIdJjaL4rSLSiU8pimu3dN3mUjCUbG6eiYDHf6pWtsAWbaIdMAFvX6w4FULMdg6E+bg/Kiy7AGGoX3whHBoVLnPjuWemouX3CDWbtft6TzmAngBz/x7PZkXW1RubfPlDl0Qo5KMXbXqaUHwoluBNQ/wjrLpPy2j2Dm/1DZ2oaHsmDJfVvQTgKHC2/jsJ2A2DsCaFG8B4GV8Y7QQTD+m9WqacJZbubgFF8Tf7MMYSzVA7SbTmZrrRSTNnFm6C2urBz3nbqF7HsK7l7bGjibG7/ZK13h89GTS8CJP9dkoq+59t9x27fZOxJZOV0Q=
 
 language: java
 jdk: oraclejdk8
@@ -24,12 +25,13 @@ before_script:
 - stop_any 8080 80
 
 script:
-- bash gradlew >/dev/null
+- ./gradlew >/dev/null
 - bash ./build/libs/*.jar &
 - wait_for 8080
 - http :8080
 - stop_any 8080 80
 #
+- ./mvnw >/dev/null
 - bash ./target/*.jar &
 - wait_for 8080
 - http :8080
