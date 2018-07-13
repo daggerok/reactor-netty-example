@@ -1,0 +1,3 @@
+rootProject.name = 'reactor-netty-example'
+enableFeaturePreview 'STABLE_PUBLISHING'
+include 'docs'
